@@ -1,8 +1,8 @@
 <?php
 
-namespace Arrgh11\WireBook\Commands\Stories;
+namespace Arrgh11\Atlas\Commands\Stories;
 
-use Arrgh11\WireBook\Commands\Traits;
+use Arrgh11\Atlas\Commands\Traits;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
@@ -12,7 +12,7 @@ class NewStoryCommand extends Command
 {
     use Traits\CanManipulateFiles;
 
-    protected $signature = 'wirebook:story {--force}';
+    protected $signature = 'atlas:story {--force}';
 
     protected $description = 'Create a new Story';
 
@@ -42,14 +42,14 @@ class NewStoryCommand extends Command
         //create a category for the story if it doesn't exist
         $studlyGroup = Str::studly($category);
 
-        //make a new Story component with the name in the App\WireBook\Stories\{group} namespace
+        //make a new Story component with the name in the App\Atlas\Stories\{group} namespace
         $studlyName = Str::studly($name);
 
-        //make a new Story view with the name in the resources/views/wirebook/stories/{group} directory
+        //make a new Story view with the name in the resources/views/atlas/stories/{group} directory
 
         $storyView = str($studlyName)
             ->prepend(
-                (string) str("App\\WireBook\\Stories\\{$studlyGroup}\\")
+                (string) str("App\\Atlas\\Stories\\{$studlyGroup}\\")
                     ->replaceFirst('App\\', '')
             )
             ->replace('\\', '/')
@@ -59,7 +59,7 @@ class NewStoryCommand extends Command
 
         $storyPath = (string) str($studlyName)
             ->prepend('/')
-            ->prepend(app_path('Wirebook/Stories/')."\\{$studlyGroup}\\")
+            ->prepend(app_path('Atlas/Stories/')."\\{$studlyGroup}\\")
             ->replace('\\', '/')
             ->replace('//', '/')
             ->append('.php');
@@ -83,7 +83,7 @@ class NewStoryCommand extends Command
         }
 
         $this->copyStubToApp('stories/Story', $storyPath, [
-            'namespace' => "App\\WireBook\\Stories\\{$studlyGroup}",
+            'namespace' => "App\\Atlas\\Stories\\{$studlyGroup}",
             'story' => $studlyName,
             'viewpath' => $storyView,
         ]);

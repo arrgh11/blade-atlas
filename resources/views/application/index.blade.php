@@ -1,10 +1,10 @@
-<x-wirebook::application>
+<x-atlas::application>
 
-{{--    <livewire:wirebook-app />--}}
+{{--    <livewire:atlas-app />--}}
 
 {{--    {{ $slot }}--}}
 
     oh sup {{ $story ?? '' }}
 
 
-</x-wirebook::application>
+</x-atlas::application>

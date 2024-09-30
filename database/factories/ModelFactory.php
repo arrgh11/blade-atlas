@@ -1,6 +1,6 @@
 <?php
 
-namespace Arrgh11\WireBook\Database\Factories;
+namespace Arrgh11\Atlas\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

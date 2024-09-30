@@ -1,8 +1,8 @@
 <?php
 
-namespace Arrgh11\WireBook\Tests;
+namespace Arrgh11\Atlas\Tests;
 
-use Arrgh11\WireBook\WireBookServiceProvider;
+use Arrgh11\Atlas\AtlasServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Arrgh11\\WireBook\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Arrgh11\\Atlas\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            WireBookServiceProvider::class,
+            AtlasServiceProvider::class,
         ];
     }
 
@@ -29,7 +29,7 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         /*
-        $migration = include __DIR__.'/../database/migrations/create_livewire-storybook_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_blade-atlas_table.php.stub';
         $migration->up();
         */
     }

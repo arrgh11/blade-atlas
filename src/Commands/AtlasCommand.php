@@ -1,12 +1,12 @@
 <?php
 
-namespace Arrgh11\WireBook\Commands;
+namespace Arrgh11\Atlas\Commands;
 
 use Illuminate\Console\Command;
 
-class WireBookCommand extends Command
+class AtlasCommand extends Command
 {
-    public $signature = 'livewire-storybook';
+    public $signature = 'blade-atlas';
 
     public $description = 'My command';
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Arrgh11\WireBook\Commands\Traits;
+namespace Arrgh11\Atlas\Commands\Traits;
 
 use Illuminate\Filesystem\Filesystem;
 use ReflectionClass;
@@ -38,7 +38,7 @@ trait CanManipulateFiles
     {
         $filesystem = app(Filesystem::class);
 
-        if (! $this->fileExists($stubPath = base_path("stubs/wirebook/{$stub}.stub"))) {
+        if (! $this->fileExists($stubPath = base_path("stubs/atlas/{$stub}.stub"))) {
             $stubPath = $this->getDefaultStubPath()."/{$stub}.stub";
         }
 

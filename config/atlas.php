@@ -1,14 +1,14 @@
 <?php
 
-// config for Arrgh11/WireBook
+// config for Arrgh11/Atlas
 return [
     'discover' => [
         'paths' => [
-            app_path('WireBook/Stories'),
+            app_path('Atlas/Stories'),
         ],
     ],
     'globals' => [
-        'layout' => 'wirebook::application.story',
+        'layout' => 'atlas::application.story',
     ],
     'show_tests' => false,
 ];

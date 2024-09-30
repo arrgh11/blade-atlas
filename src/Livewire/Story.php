@@ -1,6 +1,6 @@
 <?php
 
-namespace Arrgh11\WireBook\Livewire;
+namespace Arrgh11\Atlas\Livewire;
 
 use Livewire\Component;
 
@@ -18,7 +18,7 @@ abstract class Story extends Component implements Contracts\IsStory
     {
         return (string) str(static::class)
             ->replace('\\', ' ')
-            ->replace('WireBook', 'Wirebook')
+            ->replace('Atlas', 'Atlas')
             ->kebab();
 
     }
@@ -31,6 +31,6 @@ abstract class Story extends Component implements Contracts\IsStory
             'code' => $this->getCode(),
         ])
             ->title($this->getStoryName())
-            ->layout(config('wirebook.globals.layout'));
+            ->layout(config('atlas.globals.layout'));
     }
 }

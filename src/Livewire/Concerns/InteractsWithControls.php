@@ -1,8 +1,8 @@
 <?php
 
-namespace Arrgh11\WireBook\Livewire\Concerns;
+namespace Arrgh11\Atlas\Livewire\Concerns;
 
-use Arrgh11\WireBook\Livewire\Attributes\Control;
+use Arrgh11\Atlas\Livewire\Attributes\Control;
 
 trait InteractsWithControls
 {

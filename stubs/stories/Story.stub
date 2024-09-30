@@ -3,9 +3,9 @@
 namespace {{ namespace }};
 
 use Livewire\Attributes\Layout;
-use Arrgh11\WireBook\Livewire\Story;
-use Arrgh11\WireBook\Enums\Control as ControlType;
-use Arrgh11\WireBook\Livewire\Attributes\Control;
+use Arrgh11\Atlas\Livewire\Story;
+use Arrgh11\Atlas\Enums\Control as ControlType;
+use Arrgh11\Atlas\Livewire\Attributes\Control;
 
 class {{ story }} extends Story
 {

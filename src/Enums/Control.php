@@ -1,6 +1,6 @@
 <?php
 
-namespace Arrgh11\WireBook\Enums;
+namespace Arrgh11\Atlas\Enums;
 
 enum Control: string
 {
@@ -15,13 +15,13 @@ enum Control: string
     public function getView(): string
     {
         return match ($this) {
-            self::TEXT => 'wirebook::support.controls.input',
-            self::TEXTAREA => 'wirebook::support.controls.textarea',
-            self::SELECT => 'wirebook::support.controls.select',
-            self::CHECKBOX => 'wirebook::support.controls.checkbox',
-            self::RADIO => 'wirebook::support.controls.radio',
-            self::FILE => 'wirebook::support.controls.file',
-            self::TOGGLE => 'wirebook::support.controls.toggle',
+            self::TEXT => 'atlas::support.controls.input',
+            self::TEXTAREA => 'atlas::support.controls.textarea',
+            self::SELECT => 'atlas::support.controls.select',
+            self::CHECKBOX => 'atlas::support.controls.checkbox',
+            self::RADIO => 'atlas::support.controls.radio',
+            self::FILE => 'atlas::support.controls.file',
+            self::TOGGLE => 'atlas::support.controls.toggle',
         };
     }
 }

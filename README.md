@@ -1,15 +1,15 @@
 # Storybook-like documentation package for Livewire components!
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/arrgh11/livewire-storybook.svg?style=flat-square)](https://packagist.org/packages/arrgh11/livewire-storybook)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/arrgh11/livewire-storybook/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/arrgh11/livewire-storybook/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/arrgh11/livewire-storybook/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/arrgh11/livewire-storybook/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/arrgh11/livewire-storybook.svg?style=flat-square)](https://packagist.org/packages/arrgh11/livewire-storybook)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/arrgh11/blade-atlas.svg?style=flat-square)](https://packagist.org/packages/arrgh11/blade-atlas)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/arrgh11/blade-atlas/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/arrgh11/blade-atlas/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/arrgh11/blade-atlas/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/arrgh11/blade-atlas/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/arrgh11/blade-atlas.svg?style=flat-square)](https://packagist.org/packages/arrgh11/blade-atlas)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/livewire-storybook.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/livewire-storybook)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/blade-atlas.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/blade-atlas)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -20,20 +20,20 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require arrgh11/livewire-storybook
+composer require arrgh11/blade-atlas
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="livewire-storybook-migrations"
+php artisan vendor:publish --tag="blade-atlas-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="livewire-storybook-config"
+php artisan vendor:publish --tag="blade-atlas-config"
 ```
 
 This is the contents of the published config file:
@@ -46,13 +46,13 @@ return [
 Optionally, you can publish the views using
 
 ```bash
-php artisan vendor:publish --tag="livewire-storybook-views"
+php artisan vendor:publish --tag="blade-atlas-views"
 ```
 
 ## Usage
 
 ```php
-$wireBook = new Arrgh11\WireBook();
+$wireBook = new Arrgh11\Atlas();
 echo $wireBook->echoPhrase('Hello, Arrgh11!');
 ```
 

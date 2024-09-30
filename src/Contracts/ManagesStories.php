@@ -1,6 +1,6 @@
 <?php
 
-namespace Arrgh11\WireBook\Contracts;
+namespace Arrgh11\Atlas\Contracts;
 
 use Illuminate\Support\Str;
 use Livewire\Livewire;
@@ -16,7 +16,7 @@ trait ManagesStories
 
     public function discoverStories()
     {
-        $paths = config('wirebook.discover.paths');
+        $paths = config('atlas.discover.paths');
 
         $storyGroups = [];
 
@@ -41,9 +41,9 @@ trait ManagesStories
 
                     $storyName = Str::replace('.php', '', $story);
 
-                    $kebab = Str::kebab('wirebook '.$group.' '.$storyName);
+                    $kebab = Str::kebab('atlas '.$group.' '.$storyName);
 
-                    $className = 'App\\WireBook\\Stories\\'.$group.'\\'.$storyName;
+                    $className = 'App\\Atlas\\Stories\\'.$group.'\\'.$storyName;
 
                     Livewire::component($kebab, $className);
 

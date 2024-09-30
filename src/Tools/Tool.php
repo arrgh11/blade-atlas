@@ -1,10 +1,10 @@
 <?php
 
-namespace Arrgh11\WireBook\Tools;
+namespace Arrgh11\Atlas\Tools;
 
-use Arrgh11\WireBook\Concerns\HasWirebookTooling;
+use Arrgh11\Atlas\Concerns\HasAtlasTooling;
 
-abstract class Tool implements HasWirebookTooling
+abstract class Tool implements HasAtlasTooling
 {
     //Blade view
     protected static string $view = '';

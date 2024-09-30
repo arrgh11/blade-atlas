@@ -1,8 +1,8 @@
 <?php
 
-namespace Arrgh11\WireBook;
+namespace Arrgh11\Atlas;
 
-class WireBook
+class Atlas
 {
     use Contracts\ManagesStories;
     use Contracts\ManagesTools;

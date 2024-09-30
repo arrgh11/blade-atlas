@@ -1,8 +1,8 @@
 <?php
 
-namespace Arrgh11\WireBook\Controllers;
+namespace Arrgh11\Atlas\Controllers;
 
-use Arrgh11\WireBook\Facades\WireBook;
+use Arrgh11\Atlas\Facades\Atlas;
 use Livewire\Features\SupportPageComponents\PageComponentConfig;
 use Livewire\Features\SupportPageComponents\SupportPageComponents;
 
@@ -19,7 +19,7 @@ class StoryController
         $layoutConfig = SupportPageComponents::interceptTheRenderOfTheComponentAndRetreiveTheLayoutConfiguration(function () use (&$html, $story) {
             //            $params = SupportPageComponents::gatherMountMethodParamsFromRouteParameters($storyClass);
 
-            $stories = WireBook::getStories();
+            $stories = Atlas::getStories();
 
             //get all stories from underneath their group
             $storyClass = collect($stories)->map(function ($group) use ($story) {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Arrgh11\WireBook\Commands\Tools;
+namespace Arrgh11\Atlas\Commands\Tools;
 
-use Arrgh11\WireBook\Commands\Traits;
+use Arrgh11\Atlas\Commands\Traits;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 
@@ -12,7 +12,7 @@ class NewToolCommand extends Command
 {
     use Traits\CanManipulateFiles;
 
-    protected $signature = 'wirebook:tool {--force}';
+    protected $signature = 'atlas:tool {--force}';
 
     protected $description = 'Create a new Tool';
 
@@ -22,14 +22,14 @@ class NewToolCommand extends Command
         //ask for the tool name
         $name = text(label: 'What is the Tool\'s name?', required: true);
 
-        //make a new Story component with the name in the App\WireBook\Stories\{group} namespace
+        //make a new Story component with the name in the App\Atlas\Stories\{group} namespace
         $studlyName = Str::studly($name);
 
-        //make a new Story view with the name in the resources/views/wirebook/stories/{group} directory
+        //make a new Story view with the name in the resources/views/atlas/stories/{group} directory
 
         $toolView = str($studlyName)
             ->prepend(
-                (string) str('App\\WireBook\\Tools\\')
+                (string) str('App\\Atlas\\Tools\\')
                     ->replaceFirst('App\\', '')
             )
             ->replace('\\', '/')
@@ -39,7 +39,7 @@ class NewToolCommand extends Command
 
         $toolPath = (string) str($studlyName)
             ->prepend('/')
-            ->prepend(app_path('Wirebook/Tools/').'\\')
+            ->prepend(app_path('Atlas/Tools/').'\\')
             ->replace('\\', '/')
             ->replace('//', '/')
             ->append('.php');
@@ -63,7 +63,7 @@ class NewToolCommand extends Command
         }
 
         $this->copyStubToApp('tools/Tool', $toolPath, [
-            'namespace' => 'App\\WireBook\\Tools',
+            'namespace' => 'App\\Atlas\\Tools',
             'tool' => $studlyName,
             'viewpath' => $toolView,
             'component' => Str::lower($studlyName),

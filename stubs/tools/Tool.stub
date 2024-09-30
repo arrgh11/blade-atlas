@@ -2,7 +2,7 @@
 
 namespace {{ namespace }};
 
-use Arrgh11\WireBook\Tools\Tool;
+use Arrgh11\Atlas\Tools\Tool;
 
 class {{ tool }} extends Tool
 {

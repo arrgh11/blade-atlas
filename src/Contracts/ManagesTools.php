@@ -1,6 +1,6 @@
 <?php
 
-namespace Arrgh11\WireBook\Contracts;
+namespace Arrgh11\Atlas\Contracts;
 
 trait ManagesTools
 {

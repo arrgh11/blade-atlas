@@ -1,16 +1,16 @@
 <?php
 
-namespace Arrgh11\WireBook\Livewire\Tests;
+namespace Arrgh11\Atlas\Livewire\Tests;
 
-use Arrgh11\WireBook\Livewire\Story;
+use Arrgh11\Atlas\Livewire\Story;
 use Livewire\Attributes\Layout;
 
-#[Layout('wirebook::application.story')]
+#[Layout('atlas::application.story')]
 class ButtonGroup extends Story
 {
     public string $buttonText = 'Button Text';
 
     public bool $middle = false;
 
-    protected string $view = 'wirebook::livewire.tests.button-group';
+    protected string $view = 'atlas::livewire.tests.button-group';
 }

@@ -1,13 +1,13 @@
 <?php
 
-namespace Arrgh11\WireBook\Livewire\Tests;
+namespace Arrgh11\Atlas\Livewire\Tests;
 
-use Arrgh11\WireBook\Enums\Control as ControlType;
-use Arrgh11\WireBook\Livewire\Attributes\Control;
-use Arrgh11\WireBook\Livewire\Story;
+use Arrgh11\Atlas\Enums\Control as ControlType;
+use Arrgh11\Atlas\Livewire\Attributes\Control;
+use Arrgh11\Atlas\Livewire\Story;
 use Livewire\Attributes\Layout;
 
-#[Layout('wirebook::application.story')]
+#[Layout('atlas::application.story')]
 class Button extends Story
 {
     #[Control(ControlType::TEXT, 'Button Text')]
@@ -26,5 +26,5 @@ class Button extends Story
     )]
     public string $size = 'xs'; //xs, sm, md, lg, xl
 
-    protected string $view = 'wirebook::livewire.tests.button';
+    protected string $view = 'atlas::livewire.tests.button';
 }

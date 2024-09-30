@@ -1,8 +1,8 @@
 <?php
 
-namespace Arrgh11\WireBook\Concerns;
+namespace Arrgh11\Atlas\Concerns;
 
-interface HasWirebookTooling
+interface HasAtlasTooling
 {
     //require a Blade view
     public static function view(): string;

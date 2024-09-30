@@ -1,4 +1,4 @@
-@extends('wirebook::livewire.story')
+@extends('atlas::livewire.story')
 
 @section('content')
     @fragment('code')

@@ -3,35 +3,35 @@
     <!-- Sidebar component, swap this element with another sidebar if you like -->
     <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
         <div class="flex h-16 shrink-0 items-center">
-            <x-wirebook::application.logo />
+            <x-atlas::application.logo />
         </div>
         <nav class="flex flex-1 flex-col">
             <ul role="list" class="flex flex-1 flex-col gap-y-7">
                 <li>
 
                     @php
-                        $stories = \Arrgh11\WireBook\Facades\WireBook::getStories();
+                        $stories = \Arrgh11\Atlas\Facades\Atlas::getStories();
                     @endphp
 
                     @foreach($stories as $group => $storyList)
-                        <x-wirebook::application.sidebar.menu.group title="{{ $group }}">
+                        <x-atlas::application.sidebar.menu.group title="{{ $group }}">
                             @foreach($storyList as $story)
-                                <x-wirebook::application.sidebar.menu.item href="{{route('wirebook.story', ['story' => $story['route']])}}">
+                                <x-atlas::application.sidebar.menu.item href="{{route('atlas.story', ['story' => $story['route']])}}">
                                     {{ $story['title'] }}
-                                </x-wirebook::application.sidebar.menu.item>
+                                </x-atlas::application.sidebar.menu.item>
                             @endforeach
-                        </x-wirebook::application.sidebar.menu.group>
+                        </x-atlas::application.sidebar.menu.group>
                     @endforeach
 
-                    @if(config('wirebook.show_tests'))
-                        <x-wirebook::application.sidebar.menu.group title="Tests">
-                            <x-wirebook::application.sidebar.menu.item href="{{route('wirebook.story', ['story' => 'test-button'])}}">
+                    @if(config('atlas.show_tests'))
+                        <x-atlas::application.sidebar.menu.group title="Tests">
+                            <x-atlas::application.sidebar.menu.item href="{{route('atlas.story', ['story' => 'test-button'])}}">
                                 Test Button
-                            </x-wirebook::application.sidebar.menu.item>
-                            <x-wirebook::application.sidebar.menu.item href="{{route('wirebook.story', ['story' => 'test-button-group'])}}">
+                            </x-atlas::application.sidebar.menu.item>
+                            <x-atlas::application.sidebar.menu.item href="{{route('atlas.story', ['story' => 'test-button-group'])}}">
                                 Test Button Group
-                            </x-wirebook::application.sidebar.menu.item>
-                        </x-wirebook::application.sidebar.menu.group>
+                            </x-atlas::application.sidebar.menu.item>
+                        </x-atlas::application.sidebar.menu.group>
                     @endif
 
                 </li>

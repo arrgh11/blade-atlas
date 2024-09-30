@@ -1,3 +1,3 @@
 # Changelog
 
-All notable changes to `livewire-storybook` will be documented in this file.
+All notable changes to `blade-atlas` will be documented in this file.

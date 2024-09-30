@@ -38,13 +38,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Arrgh11\\WireBook\\": "src/",
-            "Arrgh11\\WireBook\\Database\\Factories\\": "database/factories/"
+            "Arrgh11\\Atlas\\": "src/",
+            "Arrgh11\\Atlas\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Arrgh11\\WireBook\\Tests\\": "tests/",
+            "Arrgh11\\Atlas\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -76,10 +76,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Arrgh11\\WireBook\\WireBookServiceProvider"
+                "Arrgh11\\Atlas\\AtlasServiceProvider"
             ],
             "aliases": {
-                "WireBook": "Arrgh11\\WireBook\\Facades\\WireBook"
+                "Atlas": "Arrgh11\\Atlas\\Facades\\Atlas"
             }
         }
     },

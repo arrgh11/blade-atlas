@@ -1,5 +1,5 @@
 <?php
 
-namespace Arrgh11\WireBook\Livewire\Contracts;
+namespace Arrgh11\Atlas\Livewire\Contracts;
 
 interface IsStory {}

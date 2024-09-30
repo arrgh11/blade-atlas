@@ -1,6 +1,6 @@
 <?php
 
-namespace Arrgh11\WireBook\Livewire\Concerns;
+namespace Arrgh11\Atlas\Livewire\Concerns;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;

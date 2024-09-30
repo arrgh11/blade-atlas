@@ -1,8 +1,8 @@
 <?php
 
-namespace Arrgh11\WireBook\Livewire\Attributes;
+namespace Arrgh11\Atlas\Livewire\Attributes;
 
-use Arrgh11\WireBook\Enums\Control as ControlEnum;
+use Arrgh11\Atlas\Enums\Control as ControlEnum;
 use Illuminate\Support\Facades\Blade;
 
 #[\Attribute]

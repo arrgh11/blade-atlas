@@ -37,7 +37,7 @@
         <script>
             document.addEventListener('alpine:init', () => {
                 @php
-                    $tools = \Arrgh11\WireBook\Facades\WireBook::getTools();
+                    $tools = \Arrgh11\Atlas\Facades\Atlas::getTools();
                 @endphp
 
                 @foreach($tools as $tool)

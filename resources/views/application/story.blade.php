@@ -1,6 +1,6 @@
-<x-wirebook::application :title="$title">
+<x-atlas::application :title="$title">
 
-    {{--    <livewire:wirebook-app />--}}
+    {{--    <livewire:atlas-app />--}}
     {{ $slot }}
 
 {{--    @if(!empty($form))--}}
@@ -9,4 +9,4 @@
 {{--        </x-slot:form>--}}
 {{--    @endif--}}
 
-</x-wirebook::application>
+</x-atlas::application>

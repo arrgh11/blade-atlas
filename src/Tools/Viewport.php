@@ -1,11 +1,11 @@
 <?php
 
-namespace Arrgh11\WireBook\Tools;
+namespace Arrgh11\Atlas\Tools;
 
 class Viewport extends Tool
 {
     //Blade view
-    protected static string $view = 'wirebook::components.application.tools.viewport.index';
+    protected static string $view = 'atlas::components.application.tools.viewport.index';
 
     //Alpine component
     protected static string $component = <<<'JS'
