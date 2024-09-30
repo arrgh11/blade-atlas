@@ -1,12 +1,12 @@
 {
-    "name": "arrgh11/livewire-storybook",
+    "name": "arrgh11/blade-atlas",
     "description": "Storybook-like documentation package for Livewire components!",
     "keywords": [
         "Arrgh11",
         "laravel",
-        "livewire-storybook"
+        "blade-atlas"
     ],
-    "homepage": "https://github.com/arrgh11/livewire-storybook",
+    "homepage": "https://github.com/arrgh11/blade-atlas",
     "license": "MIT",
     "authors": [
         {
@@ -50,7 +50,7 @@
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-livewire-storybook --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-blade-atlas --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
