@@ -16,7 +16,7 @@ use JsonSerializable;
 use Stringable;
 use Traversable;
 
-class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Htmlable, Stringable
+class ControlBag implements ArrayAccess, Htmlable, IteratorAggregate, JsonSerializable, Stringable
 {
     use Conditionable, Macroable;
 
@@ -30,7 +30,6 @@ class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Ht
     /**
      * Create a new component control bag instance.
      *
-     * @param  array  $controls
      * @return void
      */
     public function __construct(array $controls = [])
@@ -250,7 +249,6 @@ class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Ht
     /**
      * Merge additional controls / values into the control bag.
      *
-     * @param  array  $controlDefaults
      * @param  bool  $escape
      * @return static
      */
@@ -265,9 +263,9 @@ class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Ht
         [$appendableAttributes, $nonAppendableAttributes] = collect($this->controls)
             ->partition(function ($value, $key) use ($controlDefaults) {
                 return $key === 'class' || $key === 'style' || (
-                        isset($controlDefaults[$key]) &&
-                        $controlDefaults[$key] instanceof AppendableAttributeValue
-                    );
+                    isset($controlDefaults[$key]) &&
+                    $controlDefaults[$key] instanceof AppendableAttributeValue
+                );
             });
 
         $controls = $appendableAttributes->mapWithKeys(function ($value, $key) use ($controlDefaults, $escape) {
@@ -364,7 +362,6 @@ class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Ht
     /**
      * Set the underlying controls.
      *
-     * @param  array  $controls
      * @return void
      */
     public function setControls(array $controls)
@@ -384,7 +381,6 @@ class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Ht
     /**
      * Extract "prop" names from given keys.
      *
-     * @param  array  $keys
      * @return array
      */
     public static function extractPropNames(array $keys)
@@ -414,7 +410,6 @@ class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Ht
     /**
      * Merge additional controls / values into the control bag.
      *
-     * @param  array  $controlDefaults
      * @return \Illuminate\Support\HtmlString
      */
     public function __invoke(array $controlDefaults = [])
@@ -426,7 +421,6 @@ class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Ht
      * Determine if the given offset exists.
      *
      * @param  string  $offset
-     * @return bool
      */
     public function offsetExists($offset): bool
     {
@@ -437,7 +431,6 @@ class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Ht
      * Get the value at the given offset.
      *
      * @param  string  $offset
-     * @return mixed
      */
     public function offsetGet($offset): mixed
     {
@@ -449,7 +442,6 @@ class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Ht
      *
      * @param  string  $offset
      * @param  mixed  $value
-     * @return void
      */
     public function offsetSet($offset, $value): void
     {
@@ -460,7 +452,6 @@ class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Ht
      * Remove the value at the given offset.
      *
      * @param  string  $offset
-     * @return void
      */
     public function offsetUnset($offset): void
     {
@@ -479,8 +470,6 @@ class ControlBag implements ArrayAccess, IteratorAggregate, JsonSerializable, Ht
 
     /**
      * Convert the object into a JSON serializable form.
-     *
-     * @return mixed
      */
     public function jsonSerialize(): mixed
     {
