@@ -46,4 +46,10 @@ class StoryController
 
         return $response;
     }
+
+    public function show(string $story)
+    {
+        return $this->index($story);
+    }
+
 }

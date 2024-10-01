@@ -19,6 +19,7 @@
         "php": "^8.2",
         "blade-ui-kit/blade-heroicons": "^2.4",
         "illuminate/contracts": "^10.0||^11.0",
+        "livewire/flux": "^1.0",
         "livewire/livewire": "^3.5",
         "spatie/laravel-package-tools": "^1.16",
         "torchlight/torchlight-laravel": "^0.6.0"

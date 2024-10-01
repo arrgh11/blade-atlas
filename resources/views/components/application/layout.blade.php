@@ -15,37 +15,32 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Styles -->
+    @fluxStyles
     @livewireStyles
 </head>
-    <body class="font-sans antialiased">
 
-        <div class="min-h-screen bg-gray-200 flex flex-col">
+    <body >
 
-            <!-- Page Content -->
-            <main class="flex h-full grow">
-
-                {{ $slot }}
-
-            </main>
-        </div>
+        {{ $slot }}
 
         @stack('modals')
 
         <script defer src="https://unpkg.com/@alpinejs/ui@3.14.1-beta.0/dist/cdn.min.js"></script>
         <script defer src="https://unpkg.com/@alpinejs/focus@3.14.1/dist/cdn.min.js"></script>
 
-        <script>
-            document.addEventListener('alpine:init', () => {
-                @php
-                    $tools = \Arrgh11\Atlas\Facades\Atlas::getTools();
-                @endphp
+{{--        <script>--}}
+{{--            document.addEventListener('alpine:init', () => {--}}
+{{--                @php--}}
+{{--                    $tools = \Arrgh11\Atlas\Facades\Atlas::getTools();--}}
+{{--                @endphp--}}
 
-                @foreach($tools as $tool)
-                    {!! $tool['component'] !!}
-                @endforeach
-            })
-        </script>
+{{--                @foreach($tools as $tool)--}}
+{{--                    {!! $tool['component'] !!}--}}
+{{--                @endforeach--}}
+{{--            })--}}
+{{--        </script>--}}
 
+        @fluxScripts
         @livewireScripts
     </body>
 </html>

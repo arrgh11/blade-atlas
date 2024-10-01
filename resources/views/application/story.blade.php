@@ -1,12 +1,22 @@
 <x-atlas::application :title="$title">
 
-    {{--    <livewire:atlas-app />--}}
     {{ $slot }}
 
-{{--    @if(!empty($form))--}}
-{{--        <x-slot:form>--}}
-{{--            {{ $form }}--}}
-{{--        </x-slot:form>--}}
-{{--    @endif--}}
+    <form wire:submit="save">
+    {!! $controls ?? '' !!}
+
+        <button type="submit">Save</button>
+    </form>
+
+{{--    <x-slot:controls>--}}
+
+{{--        @dump($form)--}}
+
+{{--        {!! $controls ?? '' !!}--}}
+{{--    </x-slot:controls>--}}
+
+    <x-slot:code>
+        {{ $code ?? '' }}
+    </x-slot:code>
 
 </x-atlas::application>

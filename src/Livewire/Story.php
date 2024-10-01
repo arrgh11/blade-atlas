@@ -2,12 +2,13 @@
 
 namespace Arrgh11\Atlas\Livewire;
 
+use Livewire\Attributes\Layout;
 use Livewire\Component;
 
-abstract class Story extends Component implements Contracts\IsStory
+abstract class Story implements Contracts\IsStory
 {
-    use Concerns\InteractsWithCode;
-    use Concerns\InteractsWithControls;
+//    use Concerns\InteractsWithCode;
+//    use Concerns\InteractsWithControls;
 
     public static function getStoryName(): string
     {
@@ -23,14 +24,12 @@ abstract class Story extends Component implements Contracts\IsStory
 
     }
 
-    public function render()
+//    #[Layout('layouts.app')]
+    public static function render(array $props = [])
     {
-        return view($this->view, [
-            'title' => $this->getStoryName(),
-            'controls' => $this->renderControls(),
-            'code' => $this->getCode(),
-        ])
-            ->title($this->getStoryName())
-            ->layout(config('atlas.globals.layout'));
+        //get the view from the class
+        $story = new static;
+
+        return view($story->view, $props);
     }
 }

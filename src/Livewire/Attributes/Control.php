@@ -16,6 +16,8 @@ class Control
 
     public ?string $view = null;
 
+    public mixed $value = null;
+
     public array $options = [];
 
     public function __construct(
@@ -42,6 +44,13 @@ class Control
         return $this;
     }
 
+    public function setValue(mixed $value): Control
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
     public function renderControl(): string
     {
 
@@ -49,6 +58,7 @@ class Control
             'view' => $this->view,
             'label' => $this->label,
             'name' => $this->name,
+            'value' => $this->value,
             'options' => $this->options,
         ]);
     }

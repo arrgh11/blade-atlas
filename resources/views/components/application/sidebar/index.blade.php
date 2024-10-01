@@ -1,48 +1,51 @@
-<!-- Static sidebar for desktop -->
-<div class="flex w-72 flex-col h-full">
-    <!-- Sidebar component, swap this element with another sidebar if you like -->
-    <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
-        <div class="flex h-16 shrink-0 items-center">
-            <x-atlas::application.logo />
-        </div>
-        <nav class="flex flex-1 flex-col">
-            <ul role="list" class="flex flex-1 flex-col gap-y-7">
-                <li>
+<flux:sidebar sticky stashable class="bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-700">
+    <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
 
-                    @php
-                        $stories = \Arrgh11\Atlas\Facades\Atlas::getStories();
-                    @endphp
+    {{--    <x-atlas::application.logo />--}}
 
-                    @foreach($stories as $group => $storyList)
-                        <x-atlas::application.sidebar.menu.group title="{{ $group }}">
-                            @foreach($storyList as $story)
-                                <x-atlas::application.sidebar.menu.item href="{{route('atlas.story', ['story' => $story['route']])}}">
-                                    {{ $story['title'] }}
-                                </x-atlas::application.sidebar.menu.item>
-                            @endforeach
-                        </x-atlas::application.sidebar.menu.group>
-                    @endforeach
+    <flux:brand href="#" logo="https://fluxui.dev/img/demo/logo.png" name="Acme Inc." class="px-2 dark:hidden" />
+    <flux:brand href="#" logo="https://fluxui.dev/img/demo/dark-mode-logo.png" name="Acme Inc." class="px-2 hidden dark:flex" />
 
-                    @if(config('atlas.show_tests'))
-                        <x-atlas::application.sidebar.menu.group title="Tests">
-                            <x-atlas::application.sidebar.menu.item href="{{route('atlas.story', ['story' => 'test-button'])}}">
-                                Test Button
-                            </x-atlas::application.sidebar.menu.item>
-                            <x-atlas::application.sidebar.menu.item href="{{route('atlas.story', ['story' => 'test-button-group'])}}">
-                                Test Button Group
-                            </x-atlas::application.sidebar.menu.item>
-                        </x-atlas::application.sidebar.menu.group>
-                    @endif
+    <flux:input as="button" variant="filled" placeholder="Search..." icon="magnifying-glass" />
 
-                </li>
+    @persist('sidebar')
 
-                <li class="mt-auto">
-                    <a href="#" class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600">
-                        <x-heroicon-o-cog-6-tooth class="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600" />
-                        Settings
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
+        {{ $slot }}
+
+
+{{--        @if(config('atlas.show_tests'))--}}
+{{--            <x-atlas::application.sidebar.menu.group title="Tests">--}}
+{{--                <x-atlas::application.sidebar.menu.item href="{{route('atlas.story', ['story' => 'test-button'])}}">--}}
+{{--                    Test Button--}}
+{{--                </x-atlas::application.sidebar.menu.item>--}}
+{{--                <x-atlas::application.sidebar.menu.item href="{{route('atlas.story', ['story' => 'test-button-group'])}}">--}}
+{{--                    Test Button Group--}}
+{{--                </x-atlas::application.sidebar.menu.item>--}}
+{{--            </x-atlas::application.sidebar.menu.group>--}}
+{{--        @endif--}}
+    @endpersist
+
+    <flux:spacer />
+
+    <flux:navlist variant="outline">
+        <flux:navlist.item icon="cog-6-tooth" href="#">Settings</flux:navlist.item>
+        <flux:navlist.item icon="information-circle" href="#">Help</flux:navlist.item>
+    </flux:navlist>
+
+    <flux:dropdown position="top" align="start" class="max-lg:hidden">
+        <flux:profile avatar="https://fluxui.dev/img/demo/user.png" name="Olivia Martin" />
+
+        <flux:menu>
+            <flux:menu.radio.group>
+                <flux:menu.radio checked>Olivia Martin</flux:menu.radio>
+                <flux:menu.radio>Truly Delta</flux:menu.radio>
+            </flux:menu.radio.group>
+
+            <flux:menu.separator />
+
+            <flux:menu.item icon="arrow-right-start-on-rectangle">Logout</flux:menu.item>
+        </flux:menu>
+    </flux:dropdown>
+
+
+</flux:sidebar>
