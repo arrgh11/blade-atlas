@@ -4,18 +4,18 @@ namespace Arrgh11\Atlas\Livewire;
 
 use Arrgh11\Atlas\Facades\Atlas;
 use Arrgh11\Atlas\Livewire\Concerns\InteractsWithControls;
-use Livewire\Attributes\Url;
 use Livewire\Component;
 
 class Application extends Component
 {
-
     use InteractsWithControls;
 
     public array $stories = [];
+
     public array $tools = [];
 
     public $activeStory = null;
+
     public ?string $activeStoryClass = null;
 
     protected $listeners = ['refresh' => '$refresh'];
@@ -46,8 +46,7 @@ class Application extends Component
             $this->setControls();
         }
 
-
-//        $this->activeStory = $story;
+        //        $this->activeStory = $story;
     }
 
     public function render()

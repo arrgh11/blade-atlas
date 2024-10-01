@@ -3,12 +3,11 @@
 namespace Arrgh11\Atlas\Livewire;
 
 use Livewire\Attributes\Layout;
-use Livewire\Component;
 
 abstract class Story implements Contracts\IsStory
 {
-//    use Concerns\InteractsWithCode;
-//    use Concerns\InteractsWithControls;
+    //    use Concerns\InteractsWithCode;
+    //    use Concerns\InteractsWithControls;
 
     public static function getStoryName(): string
     {
@@ -24,7 +23,7 @@ abstract class Story implements Contracts\IsStory
 
     }
 
-//    #[Layout('layouts.app')]
+    //    #[Layout('layouts.app')]
     public static function render(array $props = [])
     {
         //get the view from the class

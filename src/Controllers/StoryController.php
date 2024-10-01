@@ -51,5 +51,4 @@ class StoryController
     {
         return $this->index($story);
     }
-
 }

@@ -8,7 +8,6 @@ use Livewire\Attributes\Computed;
 
 trait InteractsWithControls
 {
-
     public ?StoryForm $form;
 
     public ?array $controlBag = null;
@@ -17,7 +16,7 @@ trait InteractsWithControls
     {
         $controls = [];
 
-        if (!$this->activeStoryClass) {
+        if (! $this->activeStoryClass) {
             return $controls;
         }
 
@@ -47,8 +46,8 @@ trait InteractsWithControls
             return [$control->name => $control->value];
         })->toArray();
 
-//        $controlBag = new ControlBag($controls);
-//        $this->controlBag = $controlBag->all();
+        //        $controlBag = new ControlBag($controls);
+        //        $this->controlBag = $controlBag->all();
     }
 
     #[Computed]
@@ -74,5 +73,4 @@ trait InteractsWithControls
         //re-render the component
         $this->dispatch('refresh');
     }
-
 }

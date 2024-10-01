@@ -6,7 +6,6 @@ use Livewire\Form;
 
 class StoryForm extends Form
 {
-
     public string $test = 'test';
 
     public array $controlBag = [];
@@ -18,5 +17,4 @@ class StoryForm extends Form
             $this->controlBag[$control->name] = $control->value;
         }
     }
-
 }
