@@ -27,10 +27,10 @@
         @endforeach
     </x-atlas::application.toolbar>
 
-    <flux:main class="grid grid-cols-5">
+    <main class="[grid-area:main] [[data-flux-container]_&]:px-0 grid grid-cols-5" data-flux-main>
 
         <div class="col-span-4">
-            <div class="bg-gray-100 w-full h-full" x-bind:class="{
+            <div class=" w-full h-full" x-bind:class="{
                 'max-w-7xl': $store.viewport.size === 'desktop',
                 'max-w-2xl': $store.viewport.size === 'tablet',
                 'max-w-md': $store.viewport.size === 'mobile'
@@ -48,5 +48,5 @@
             </x-slot:code>
         </x-atlas::application.panel>
 
-    </flux:main>
+    </main>
 </div>

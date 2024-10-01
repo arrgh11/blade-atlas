@@ -4,7 +4,7 @@
 <aside class="block w-full overflow-y-auto bg-zinc-50 dark:bg-zinc-900 border-l border-zinc-200 dark:border-zinc-700">
 
     <flux:tab.group >
-        <div class="w-full flex items-center justify-center">
+        <div class="mt-4 w-full flex items-center justify-center">
             <flux:tabs variant="segmented" class="mx-auto">
                 <flux:tab name="controls">Controls</flux:tab>
                 <flux:tab name="source">Source</flux:tab>
