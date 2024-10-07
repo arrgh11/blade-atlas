@@ -1,3 +1,8 @@
+@props([
+    'head' => null,
+    'footer' => null,
+])
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -17,6 +22,8 @@
     <!-- Styles -->
     @fluxStyles
     @livewireStyles
+
+    {!! $head !!}
 </head>
 
     <body >
@@ -39,6 +46,8 @@
 {{--                @endforeach--}}
 {{--            })--}}
 {{--        </script>--}}
+
+        {!! $footer !!}
 
         @fluxScripts
         @livewireScripts

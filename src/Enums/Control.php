@@ -12,6 +12,8 @@ enum Control: string
     case FILE = 'file';
     case TOGGLE = 'toggle';
 
+    case FIELDSET = 'fieldset';
+
     public function getView(): string
     {
         return match ($this) {
@@ -22,6 +24,7 @@ enum Control: string
             self::RADIO => 'atlas::support.controls.radio',
             self::FILE => 'atlas::support.controls.file',
             self::TOGGLE => 'atlas::support.controls.toggle',
+            self::FIELDSET => 'atlas::support.controls.fieldset',
         };
     }
 }

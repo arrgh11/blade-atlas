@@ -56,6 +56,23 @@ class ControlBag implements ArrayAccess, Htmlable, IteratorAggregate, JsonSerial
      */
     public function get($key, $default = null)
     {
+
+        //check if the key is dotted
+        if (Str::contains($key, '.')) {
+            $keys = explode('.', $key);
+            $value = $this->controls;
+
+            foreach ($keys as $innerKey) {
+                if (!is_array($value) || !array_key_exists($innerKey, $value)) {
+                    return value($default);
+                }
+
+                $value = $value[$innerKey];
+            }
+
+            return $value;
+        }
+
         return $this->controls[$key] ?? value($default);
     }
 

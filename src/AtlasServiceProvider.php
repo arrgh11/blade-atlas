@@ -6,6 +6,7 @@ use Arrgh11\Atlas\Commands\Stories;
 use Arrgh11\Atlas\Commands\Tools;
 use Arrgh11\Atlas\Controllers\StoryController;
 use Arrgh11\Atlas\Livewire\Application;
+use Arrgh11\Atlas\Livewire\Synths\ControlBagSynth;
 use Arrgh11\Atlas\Livewire\Tests;
 use Arrgh11\Atlas\Tools\Viewport;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +56,8 @@ class AtlasServiceProvider extends PackageServiceProvider
         //        \Arrgh11\Atlas\Facades\Atlas::discoverTools();
 
         \Arrgh11\Atlas\Facades\Atlas::discoverStories();
+
+        Livewire::propertySynthesizer(ControlBagSynth::class);
 
     }
 }

@@ -10,7 +10,7 @@ trait InteractsWithControls
 {
     public ?StoryForm $form;
 
-    public ?array $controlBag = null;
+    public ?ControlBag $controlBag = null;
 
     public function getControls(): array
     {
@@ -34,6 +34,13 @@ trait InteractsWithControls
             }
         }
 
+        //get the chapters
+        $chapters = $activeStory->getChapters();
+
+        foreach ($chapters as $prefix => $chapter) {
+            $controls[] = $chapter;
+        }
+
         return $controls;
 
     }
@@ -42,12 +49,12 @@ trait InteractsWithControls
     {
 
         //get the name/value pairs from getControls
-        $this->controlBag = collect($this->getControls())->mapWithKeys(function ($control) {
+        $controls = collect($this->getControls())->mapWithKeys(function ($control) {
             return [$control->name => $control->value];
         })->toArray();
 
-        //        $controlBag = new ControlBag($controls);
-        //        $this->controlBag = $controlBag->all();
+        $this->controlBag = new ControlBag($controls);
+//        $this->controlBag = $controlBag->all();
     }
 
     #[Computed]
@@ -56,7 +63,8 @@ trait InteractsWithControls
         $controls = $this->getControls();
 
         $controlHtml = '';
-        foreach ($controls as $control) {
+
+        foreach ($controls as $prefix => $control) {
             $controlHtml .= $control->renderControl();
         }
 

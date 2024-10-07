@@ -2,6 +2,8 @@
 
 namespace Arrgh11\Atlas\Contracts;
 
+use Arrgh11\Atlas\ControlBag;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Livewire\Livewire;
 
@@ -12,6 +14,39 @@ trait ManagesStories
     public function getStories()
     {
         return $this->stories;
+    }
+
+    public function getStory($component): array
+    {
+
+        //ensure the component starts with 'atlas'
+        if (!Str::startsWith($component, 'atlas')) {
+            $component = 'atlas-'.$component;
+        }
+
+        return collect($this->stories)->map(function ($group) use ($component) {
+            return collect($group)->filter(function ($storyObj) use ($component) {
+                return $storyObj['component'] === $component;
+            })->map(function ($storyObj) {
+                return $storyObj;
+            });
+        })->flatten()->toArray();
+    }
+
+    public function renderStory($component, $data = [])
+    {
+        $story = $this->getStory($component);
+
+        if (empty($story)) {
+            return null;
+        }
+
+        //if data has controls, convert to ControlBag
+        if (isset($data['controls'])) {
+            $data['controls'] = new ControlBag($data['controls']);
+        }
+
+        return view($story[4], $data)->fragment('story');
     }
 
     public function discoverStories()
@@ -52,6 +87,7 @@ trait ManagesStories
                         'class' => $className,
                         'title' => $className::getStoryName(),
                         'route' => $className::getStoryId(),
+                        'view' => $className::getView(),
                     ];
 
                 }
