@@ -3,7 +3,6 @@
 namespace Arrgh11\Atlas\Contracts;
 
 use Arrgh11\Atlas\ControlBag;
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Livewire\Livewire;
 
@@ -20,7 +19,7 @@ trait ManagesStories
     {
 
         //ensure the component starts with 'atlas'
-        if (!Str::startsWith($component, 'atlas')) {
+        if (! Str::startsWith($component, 'atlas')) {
             $component = 'atlas-'.$component;
         }
 

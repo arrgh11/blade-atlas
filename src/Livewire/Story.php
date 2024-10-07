@@ -34,7 +34,7 @@ abstract class Story implements Contracts\IsStory
 
         //get the controls attributes from the class, using Reflection
         $reflection = new \ReflectionClass(static::class);
-        $activeStory = new static();
+        $activeStory = new static;
 
         foreach ($reflection->getProperties() as $property) {
             $attributes = $property->getAttributes(Control::class);

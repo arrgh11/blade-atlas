@@ -63,7 +63,7 @@ class ControlBag implements ArrayAccess, Htmlable, IteratorAggregate, JsonSerial
             $value = $this->controls;
 
             foreach ($keys as $innerKey) {
-                if (!is_array($value) || !array_key_exists($innerKey, $value)) {
+                if (! is_array($value) || ! array_key_exists($innerKey, $value)) {
                     return value($default);
                 }
 

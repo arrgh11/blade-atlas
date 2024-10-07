@@ -54,7 +54,7 @@ trait InteractsWithControls
         })->toArray();
 
         $this->controlBag = new ControlBag($controls);
-//        $this->controlBag = $controlBag->all();
+        //        $this->controlBag = $controlBag->all();
     }
 
     #[Computed]

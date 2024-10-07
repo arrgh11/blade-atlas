@@ -3,9 +3,6 @@
 namespace Arrgh11\Atlas\Livewire\Concerns;
 
 use Arrgh11\Atlas\Livewire\Attributes\Control;
-use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Facades\View;
-use Torchlight\Blade\BladeManager;
 
 trait InteractsWithChapters
 {
@@ -25,7 +22,7 @@ trait InteractsWithChapters
             $fieldset = new Control(
                 type: 'fieldset',
                 label: $label,
-                fields: $chapter::getControls($prefix . '.')
+                fields: $chapter::getControls($prefix.'.')
             );
             $chapters[] = $fieldset;
         }
@@ -43,5 +40,4 @@ trait InteractsWithChapters
 
         return $controls;
     }
-
 }

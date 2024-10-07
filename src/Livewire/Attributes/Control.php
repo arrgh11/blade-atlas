@@ -3,8 +3,8 @@
 namespace Arrgh11\Atlas\Livewire\Attributes;
 
 use Arrgh11\Atlas\Enums\Control as ControlEnum;
-use Closure;
 use Attribute;
+use Closure;
 use Illuminate\Support\Facades\Blade;
 
 #[Attribute(Attribute::TARGET_PROPERTY)]
@@ -53,7 +53,6 @@ class Control
         } else {
             $this->fields = $fields;
         }
-
 
     }
 

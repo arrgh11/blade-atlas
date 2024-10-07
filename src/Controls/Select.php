@@ -6,7 +6,6 @@ use Arrgh11\Atlas\Contracts\InteractsWithOptions;
 
 class Select extends Control
 {
-
     use InteractsWithOptions;
 
     public function getView(): string

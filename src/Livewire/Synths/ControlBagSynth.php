@@ -27,13 +27,13 @@ class ControlBagSynth extends Synth
         return $instance;
     }
 
-//    public function get(&$target, $key)
-//    {
-//        return $target->{$key};
-//    }
-//
-//    public function set(&$target, $key, $value)
-//    {
-//        $target->{$key} = $value;
-//    }
+    //    public function get(&$target, $key)
+    //    {
+    //        return $target->{$key};
+    //    }
+    //
+    //    public function set(&$target, $key, $value)
+    //    {
+    //        $target->{$key} = $value;
+    //    }
 }
